@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 19.2rem;
+}
+
+#time {
+  display: flex;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 12.6rem;
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-areas:
+    "img img"
+    "img img";
+  gap: 3.2rem;
+}
