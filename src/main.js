@@ -5,6 +5,7 @@ const play = document.querySelector("#play");
 const stop = document.querySelector("#stop");
 const addMinutes = document.querySelector("#addMinutes");
 const increaseMinutes = document.querySelector("#increaseMinutes");
+let timeOutID
 
 addMinutes.addEventListener("click", () => {
   let newMinutes = Number(minutes.textContent) + 5;
@@ -19,6 +20,7 @@ increaseMinutes.addEventListener("click", () => {
 });
 
 play.addEventListener("click", startTimer)
+stop.addEventListener("click", stopTimer)
 
 
 function startTimer() {
@@ -35,8 +37,19 @@ function startTimer() {
   minutes.textContent = String(newMinutes).padStart(2, "0");
 
   if(seconds.textContent == 0 & minutes.textContent == 0){
+    resetTimer()
     return
   }
 
-  setTimeout(startTimer, 1000)
+  timeOutID = setTimeout(startTimer, 1000)
+}
+
+function stopTimer() {
+  clearTimeout(timeOutID)
+  resetTimer()
+}
+
+function resetTimer() {
+  minutes.textContent = 25;
+  seconds.textContent = "00";
 }
