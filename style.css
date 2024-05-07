@@ -41,4 +41,11 @@ main {
   gap: 3.2rem;
 }
 
+.cardPressed{
+  fill: #02799D;
+}
+
+.iconPressed{
+  fill: #ffffff;
+}
 
