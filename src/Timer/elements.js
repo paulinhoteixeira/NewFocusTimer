@@ -8,6 +8,8 @@ const rainIcon = document.querySelector("#rainButton .icon");
 const coffeeshopIcon = document.querySelector("#coffeeshopButton .icon");
 const bonfireIcon = document.querySelector("#bonfireButton .icon");
 
+
+
 export {
   forestCard,
   rainCard,

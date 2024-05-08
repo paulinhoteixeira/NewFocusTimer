@@ -1,15 +1,4 @@
-import * as sounds from './Timer/sounds.js'
-import {
-  forestCard,
-  rainCard,
-  coffeeshopCard,
-  bonfireCard,
-  forestIcon,
-  rainIcon,
-  coffeeshopIcon,
-  bonfireIcon,
-} from './Timer/elements.js';
-
+import {selectSound} from './Timer/actions.js'
 
 const minutes = document.querySelector("#minutes");
 const seconds = document.querySelector("#seconds");
@@ -40,101 +29,21 @@ play.addEventListener("click", startTimer)
 stop.addEventListener("click", stopTimer)
 
 forestButton.addEventListener("click",() =>{
-  if(forestCard.classList.contains("cardPressed")){
-    sounds.forest.pause()
-    forestCard.classList.remove("cardPressed")
-    forestIcon.classList.remove("iconPressed")
-  }else{
-    sounds.forest.play()
-    sounds.forest.loop = true
-
-    sounds.rain.pause()
-    sounds.bonfire.pause()
-    sounds.coffeeshop.pause()
-
-    forestCard.classList.add("cardPressed")
-    forestIcon.classList.add("iconPressed")
-    rainCard.classList.remove("cardPressed")
-    rainIcon.classList.remove("iconPressed")  
-    coffeeshopCard.classList.remove("cardPressed")
-    coffeeshopIcon.classList.remove("iconPressed")
-    bonfireCard.classList.remove("cardPressed")
-    bonfireIcon.classList.remove("iconPressed")
-  }
+  selectSound("forest")
 })
 
 rainButton.addEventListener("click",() =>{
-  if(rainCard.classList.contains("cardPressed")){
-    sounds.rain.pause()
-    rainCard.classList.remove("cardPressed")
-    rainIcon.classList.remove("iconPressed")  
-  }else{
-    sounds.rain.play()
-    sounds.rain.loop = true
-
-    sounds.forest.pause()
-    sounds.bonfire.pause()
-    sounds.coffeeshop.pause()
-
-    rainCard.classList.add("cardPressed")
-    rainIcon.classList.add("iconPressed")
-    forestCard.classList.remove("cardPressed")
-    forestIcon.classList.remove("iconPressed")
-    coffeeshopCard.classList.remove("cardPressed")
-    coffeeshopIcon.classList.remove("iconPressed")
-    bonfireCard.classList.remove("cardPressed")
-    bonfireIcon.classList.remove("iconPressed")
-  }
-  
+  selectSound("rain")  
 })
 
 coffeeshopButton.addEventListener("click",() =>{
-  if(coffeeshopCard.classList.contains("cardPressed")){
-    sounds.coffeeshop.pause()
-    coffeeshopCard.classList.remove("cardPressed")
-    coffeeshopIcon.classList.remove("iconPressed")
-  }else{
-    sounds.coffeeshop.play()
-    sounds.coffeeshop.loop = true
+  selectSound("coffeeshop")
 
-    sounds.forest.pause()
-    sounds.rain.pause()
-    sounds.bonfire.pause()
-
-    coffeeshopCard.classList.add("cardPressed")
-    coffeeshopIcon.classList.add("iconPressed")
-    forestCard.classList.remove("cardPressed")
-    forestIcon.classList.remove("iconPressed")
-    rainCard.classList.remove("cardPressed")
-    rainIcon.classList.remove("iconPressed")  
-    bonfireCard.classList.remove("cardPressed")
-    bonfireIcon.classList.remove("iconPressed")
-  }
 })
 
 bonfireButton.addEventListener("click",() =>{
-  if(bonfireCard.classList.contains("cardPressed")){
-    sounds.bonfire.pause()
-    bonfireCard.classList.remove("cardPressed")
-    bonfireIcon.classList.remove("iconPressed")
-  }else{
-    sounds.bonfire.play()
-    sounds.bonfire.loop = true
-
-    sounds.forest.pause()
-    sounds.rain.pause()
-    sounds.coffeeshop.pause()
-
-
-    bonfireCard.classList.add("cardPressed")
-    bonfireIcon.classList.add("iconPressed")
-    forestCard.classList.remove("cardPressed")
-    forestIcon.classList.remove("iconPressed")
-    rainCard.classList.remove("cardPressed")
-    rainIcon.classList.remove("iconPressed") 
-    coffeeshopCard.classList.remove("cardPressed")
-    coffeeshopIcon.classList.remove("iconPressed")
-  }
+  selectSound("bonfire")
+  
 })
 
 
