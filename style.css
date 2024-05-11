@@ -49,3 +49,6 @@ main {
   fill: #ffffff;
 }
 
+.button{
+  cursor: pointer;
+}
