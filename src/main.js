@@ -7,16 +7,17 @@ el.play.addEventListener("click", startTimer)
 el.stop.addEventListener("click", stopTimer)
 
 el.addMinutes.addEventListener("click", () => {
-  let newMinutes = Number(el.minutes.textContent) + 5;
+  let newMinutes = Number(el.minutes.textContent) != 60 ? Number(el.minutes.textContent) + 5 : 60;
   el.minutes.textContent = String(newMinutes).padStart(2, "0");
 });
 
 el.increaseMinutes.addEventListener("click", () => {
-  let newMinutes = (el.minutes.textContent = 5
+  let newMinutes = Number(el.minutes.textContent) == 5
     ? 5
-    : Number(el.minutes.textContent) - 5);
+    : Number(el.minutes.textContent) - 5;
   el.minutes.textContent = String(newMinutes).padStart(2, "0");
 });
+
 
 el.forestButton.addEventListener("click",() =>{
   selectSound("forest")
